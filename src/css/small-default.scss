@@ -1,0 +1,92 @@
+@import "./variables";
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/***************BODY********************/
+body {
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  font-size: 16px;
+}
+/***************HEADER********************/
+header {
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  padding: 0.5rem $gutter;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: $normalWeight;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: $normalWeight;
+  }
+}
+
+/***************NAVIGATION********************/
+nav {
+  background-color: $secondaryColor;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
+  ul li {
+    float: left;
+    width: 25%;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  ul li:last-child {
+    border-right: none;
+  }
+
+  ul li a {
+    display: block;
+    transition: background 0.75s ease;
+    font-weight: $boldWeight;
+    padding: 0.5rem 0;
+    text-align: center;
+    text-decoration: none;
+    color: $primaryColor;
+  }
+
+  ul li a.active {
+    background-color: darken($secondaryColor, 10%);
+  }
+
+  ul li a:hover {
+    color: $secondaryColor;
+    background-color: $primaryColor;
+  }
+}
+
+/***************FOOTER********************/
+footer {
+  background-color: $primaryColor;
+  width: 100%;
+  border: 1px solid lighten($primaryColor, 20%);
+  p {
+    text-align: center;
+    color: $secondaryColor;
+    padding: 0.5rem $gutter;
+    font-size: 0.9rem;
+  }
+  p a {
+    color: $secondaryColor;
+  }
+}
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
